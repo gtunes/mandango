@@ -191,6 +191,7 @@ abstract class Document extends AbstractDocument
      */
     public function addFieldCache($field)
     {
+        return false;
         $cache = $this->getMandango()->getCache();
 
         foreach ($this->getQueryHashes() as $hash) {
