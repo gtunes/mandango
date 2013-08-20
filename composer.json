@@ -1,5 +1,5 @@
 {
-    "name": "vsychov/mandango",
+    "name": "gtunes/mandango",
     "type": "library",
     "description": "Simple, poweful and ultrafast Object Document Mapper (ODM) for PHP and MongoDB",
     "keywords": ["odm", "mongodb"],
