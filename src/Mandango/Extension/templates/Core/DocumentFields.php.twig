@@ -33,7 +33,7 @@
         }
 
         if (!isset($this->fieldsModified['{{ name }}']) && !array_key_exists('{{ name }}', $this->fieldsModified)) {
-            $this->fieldsModified['{{ name }}'] = $this->data['fields']['{{ name }}'];
+            $this->fieldsModified['{{ name }}'] = isset($this->data['fields']['{{ name }}']) ? $this->data['fields']['{{ name }}'] : null;
         } elseif ($this->isFieldModifiedEqualTo('{{ name }}', $value)) {
             unset($this->fieldsModified['{{ name }}']);
         }
@@ -100,7 +100,7 @@
 
     private function isFieldEqualTo($field, $otherValue)
     {
-        $value = $this->data['fields'][$field];
+        $value = isset($this->data['fields'][$field]) ? $this->data['fields'][$field] : null;;
 
         return $this->isFieldValueEqualTo($value, $otherValue);
     }
