@@ -204,12 +204,16 @@ abstract class Document extends AbstractDocument
     /**
      * Adds a reference cache
      */
-    public function addReferenceCache($reference)
+     public function addReferenceCache($reference)
     {
         $cache = $this->getMandango()->getCache();
 
         foreach ($this->getQueryHashes() as $hash) {
             $value = $cache->has($hash) ? $cache->get($hash) : array();
+            if(!is_array($value)) {
+                $value = [];
+            }
+
             if(!is_array($value['references'])) {
                 $value['references'] = [];
             }
