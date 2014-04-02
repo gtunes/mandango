@@ -214,7 +214,7 @@ abstract class Document extends AbstractDocument
                 $value = [];
             }
 
-            if(!is_array($value['references'])) {
+            if(!isset($value['references']) || !is_array($value['references'])) {
                 $value['references'] = [];
             }
 
